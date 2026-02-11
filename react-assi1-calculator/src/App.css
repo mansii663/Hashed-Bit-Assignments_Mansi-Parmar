@@ -1,0 +1,74 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #b895dc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.calculator {
+  background: #ffffff;
+  padding: 30px 25px;
+  width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.calculator h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.calculator input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+.calculator input:focus {
+  border-color: #667eea;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.buttons button {
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #667eea;
+  color: white;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  background: #5563c1;
+  transform: translateY(-2px);
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.result span {
+  font-weight: bold;
+  color: #667eea;
+}
