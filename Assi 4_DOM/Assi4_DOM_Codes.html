@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS DOM Assignment</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+            padding: 20px;
+        }
+
+        .dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        #dynamicBox {
+            width: 300px;
+            height: 120px;
+            background: lightgray;
+            line-height: 120px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JS DOM Assignment</h1>
+
+    <!-- Q1 Dark Theme -->
+    <div class="section">
+        <h2>Dark Theme Toggle</h2>
+        <button id="darkBtn">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Q2 Div Creation -->
+    <div class="section">
+        <h2>Div Creation</h2>
+        <button id="createDiv">Create Div</button>
+    </div>
+
+    <!-- Q3 Hide / Show Paragraph -->
+    <div class="section">
+        <h2>Hide / Show Paragraph</h2>
+        <p id="para">This paragraph can be hidden or shown.</p>
+        <button id="togglePara">Hide</button>
+    </div>
+
+    <!-- Q4 Dynamic CSS -->
+    <div class="section">
+        <h2>Dynamic CSS</h2>
+        <div id="dynamicBox">Style Me</div>
+        <button id="styleBtn">Change Style</button>
+    </div>
+
+    <script>
+         /* Q1 Dark Theme */
+        document.getElementById("darkBtn").addEventListener("click", function () {
+            document.body.classList.toggle("dark");
+        });
+
+        /* Q2 Div Creation */
+        document.getElementById("createDiv").addEventListener("click", function () {
+            const div = document.createElement("div");
+            div.innerText = "This div was created using JavaScript DOM";
+            div.style.backgroundColor = "#4CAF50";
+            div.style.color = "white";
+            div.style.padding = "15px";
+            div.style.marginTop = "10px";
+            div.style.borderRadius = "5px";
+            this.parentElement.appendChild(div);
+            this.disabled = true;
+        });
+
+        /* Q3 Hide / Show Paragraph */
+        const para = document.getElementById("para");
+        const toggleBtn = document.getElementById("togglePara");
+
+        toggleBtn.addEventListener("click", function ()
+        {
+            if (para.style.display === "none") 
+            {
+                para.style.display = "block";
+                toggleBtn.innerText = "Hide";
+            } 
+            else 
+            {
+                para.style.display = "none";
+                toggleBtn.innerText = "Show";
+            }
+        });
+
+        /* Q4 Dynamic CSS */
+        document.getElementById("styleBtn").addEventListener("click", function () 
+        { 
+            const box = document.getElementById("dynamicBox");
+            box.style.backgroundColor = "tomato";
+            box.style.color = "white";
+            box.style.fontSize = "20px";
+            box.style.borderRadius = "10px";
+            box.style.fontWeight = "bold";
+        });
+    </script>
+</body>
+</html>
